@@ -16,12 +16,12 @@
 
   ## Installation
   Please install the following dependencies in the terminal to run the application. 
-  1. [npm inquirer package](https://www.npmjs.com/package/inquirer)
-  2. [npm mysql2 package](https://www.npmjs.com/package/mysql2)
-  3. [npm console.table package](https://www.npmjs.com/package/console.table)
-  4. Install MySQL Workbench 
-    - For Windows user: [Windows(x86, 32-bit), MSI Installer](https://dev.mysql.com/downloads/installer/)
-    - For Mac user: [See guide for installing MySQL on Mac.](https://dev.mysql.com/doc/mysql-macos-excerpt/5.7/en/macos-installation.html)
+  * [npm inquirer package](https://www.npmjs.com/package/inquirer)
+  * [npm mysql2 package](https://www.npmjs.com/package/mysql2)
+  * [npm console.table package](https://www.npmjs.com/package/console.table)
+  * Install MySQL Workbench 
+    * For Windows user: [Windows(x86, 32-bit), MSI Installer](https://dev.mysql.com/downloads/installer/)
+    * For Mac user: [See guide for installing MySQL on Mac.](https://dev.mysql.com/doc/mysql-macos-excerpt/5.7/en/macos-installation.html)
 
   ## Task
   In order to use this application, the following requirements are met when:
