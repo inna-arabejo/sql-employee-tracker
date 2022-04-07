@@ -44,35 +44,35 @@ function department(){
         },
         {
           name: "Update Employee Role",
-          value: "VIEW_EMPLOYEES"
+          value: "UPDATE_EMPLOYEE_ROLE"
         },
         {
           name: "Add Role",
-          value: "VIEW_EMPLOYEES"
+          value: "ADD_ROLE"
         },
         {
           name: "View All Roles",
-          value: "VIEW_EMPLOYEES"
+          value: "VIEW_ROLES"
         },
         {
           name: "Remove Role",
-          value: "VIEW_EMPLOYEES"
+          value: "REMOVE_ROLE"
         },
         {
           name: "View All Departments",
-          value: "VIEW_EMPLOYEES"
+          value: "VIEW_DEPARTMENTS"
         },
         {
           name: "Add Department",
-          value: "VIEW_EMPLOYEES"
+          value: "ADD_DEPARTMENT"
         },
         {
           name: "Remove Department",
-          value: "VIEW_EMPLOYEES"
+          value: "REMOVE_DEPARTMENT"
         },
         {
           name: "View Total Utilized Budget By Department",
-          value: "VIEW_EMPLOYEES"
+          value: "VIEW_TOTAL_UTILIZED_BUDGET_BY_DEPARTMENT"
         },
         {
           name: "Quit",
@@ -84,22 +84,49 @@ function department(){
     let choice = res.choice;
     switch (choice){
       case "VIEW_EMPLOYEES": 
-      viewEmployees();
-      break;
-      case "":
-      functionName();
-      break;
-      case "":
-      functionName();
-      break;
-      case "":
-      functionName();
-      break;
-      case "":
-      functionName();
-      break;
+        viewEmployees();
+        break;
+      case "VIEW_EMPLOYEES_BY_DEPARTMENT":
+        viewEmployeesByDepartment();
+        break;
+      case "VIEW_EMPLOYEES_BY_MANAGER":
+        viewEmployeesByManager();
+        break;
+      case "ADD_EMPLOYEE":
+        addEmployee();
+        break;
+      case "UPDATE_EMPLOYEE_MANAGER":
+        updateEmployeeManager();
+        break;
+      case "REMOVE_EMPLOYEE":
+        removeEmployee();
+        break;
+      case "UPDATE_EMPLOYEE_ROLE":
+        updateEmployeeRole();
+        break;
+      case "ADD_ROLE":
+        addRole();
+        break;
+      case "VIEW_ROLES":
+        viewRoles();
+        break;
+      case "REMOVE_ROLE":
+        removeRole();
+        break;
+      case "VIEW_DEPARTMENTS":
+        viewDepartments();
+        break;
+      case "ADD_DEPARTMENT":
+        addDepartment();
+        break;
+      case "REMOVE_DEPARTMENT":
+        removeDepartment();
+        break;
+      case "VIEW_TOTAL_UTILIZED_BUDGET_BY_DEPARTMENT":
+        viewTotalUtilizedBudgetByDepartment();
+        break;
       default: 
-      quit();
+        quit();
     }
   })
 }
