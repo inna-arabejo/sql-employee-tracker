@@ -62,7 +62,7 @@
   ## Tests
   To begin using MySQL Workbench, you must connect to the terminal by typing "`mysql -u root -p`". It will then prompt you to enter your password.
 
-  To generate user-input in the command-line, type "`node index.js`".
+  To generate user-input in the command-line, type "`node server.js`".
 
   ## License
   This project is covered under MIT.
