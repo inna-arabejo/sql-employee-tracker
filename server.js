@@ -131,6 +131,277 @@ function department(){
   })
 }
 
+// View all employees
+function viewEmployees(){
+  db.findAllEmployees()
+  .then(([rows]) => {
+    let employees = rows;
+    const employeeChoices = employees.map(({ id, first_name, last_name }) => ({
+      name: `${first_name} ${last_name}`,
+      value: id
+    }));
+
+    prompt([
+      {
+        
+      }
+    ])
+
+  })
+}
+
+function viewEmployeesByDepartment(){
+  db.findAllEmployees()
+  .then(([rows]) => {
+    let employees = rows;
+    const employeeChoices = employees.map(({ id, first_name, last_name }) => ({
+      name: `${first_name} ${last_name}`,
+      value: id
+    }));
+
+    prompt([
+      {
+        
+      }
+    ])
+
+  })
+}
+
+function viewEmployeesByManager(){
+  db.findAllEmployees()
+  .then(([rows]) => {
+    let employees = rows;
+    const employeeChoices = employees.map(({ id, first_name, last_name }) => ({
+      name: `${first_name} ${last_name}`,
+      value: id
+    }));
+
+    prompt([
+      {
+        
+      }
+    ])
+
+  })
+}
+
+function addEmployee(){
+  db.findAllEmployees()
+  .then(([rows]) => {
+    let employees = rows;
+    const employeeChoices = employees.map(({ id, first_name, last_name }) => ({
+      name: `${first_name} ${last_name}`,
+      value: id
+    }));
+
+    prompt([
+      {
+        
+      }
+    ])
+
+  })
+}
+
+function updateEmployeeManager(){
+  db.findAllEmployees()
+  .then(([rows]) => {
+    let employees = rows;
+    const employeeChoices = employees.map(({ id, first_name, last_name }) => ({
+      name: `${first_name} ${last_name}`,
+      value: id
+    }));
+
+    prompt([
+      {
+        
+      }
+    ])
+
+  })
+}
+
+function removeEmployee(){
+  db.findAllEmployees()
+  .then(([rows]) => {
+    let employees = rows;
+    const employeeChoices = employees.map(({ id, first_name, last_name }) => ({
+      name: `${first_name} ${last_name}`,
+      value: id
+    }));
+
+    prompt([
+      {
+        
+      }
+    ])
+
+  })
+}
+
+function updateEmployeeRole(){
+  db.findAllEmployees()
+  .then(([rows]) => {
+    let employees = rows;
+    const employeeChoices = employees.map(({ id, first_name, last_name }) => ({
+      name: `${first_name} ${last_name}`,
+      value: id
+    }));
+
+    prompt([
+      {
+        
+      }
+    ])
+
+  })
+}
+
+function addRole(){
+  db.findAllEmployees()
+  .then(([rows]) => {
+    let employees = rows;
+    const employeeChoices = employees.map(({ id, first_name, last_name }) => ({
+      name: `${first_name} ${last_name}`,
+      value: id
+    }));
+
+    prompt([
+      {
+        
+      }
+    ])
+
+  })
+}
+
+function viewRoles(){
+  db.findAllEmployees()
+  .then(([rows]) => {
+    let employees = rows;
+    const employeeChoices = employees.map(({ id, first_name, last_name }) => ({
+      name: `${first_name} ${last_name}`,
+      value: id
+    }));
+
+    prompt([
+      {
+        
+      }
+    ])
+
+  })
+}
+
+function removeRole(){
+  db.findAllEmployees()
+  .then(([rows]) => {
+    let employees = rows;
+    const employeeChoices = employees.map(({ id, first_name, last_name }) => ({
+      name: `${first_name} ${last_name}`,
+      value: id
+    }));
+
+    prompt([
+      {
+        
+      }
+    ])
+
+  })
+}
+
+function viewDepartments(){
+  db.findAllEmployees()
+  .then(([rows]) => {
+    let employees = rows;
+    const employeeChoices = employees.map(({ id, first_name, last_name }) => ({
+      name: `${first_name} ${last_name}`,
+      value: id
+    }));
+
+    prompt([
+      {
+        
+      }
+    ])
+
+  })
+}
+
+function addDepartment(){
+  db.findAllEmployees()
+  .then(([rows]) => {
+    let employees = rows;
+    const employeeChoices = employees.map(({ id, first_name, last_name }) => ({
+      name: `${first_name} ${last_name}`,
+      value: id
+    }));
+
+    prompt([
+      {
+        
+      }
+    ])
+
+  })
+}
+
+function removeDepartment(){
+  db.findAllEmployees()
+  .then(([rows]) => {
+    let employees = rows;
+    const employeeChoices = employees.map(({ id, first_name, last_name }) => ({
+      name: `${first_name} ${last_name}`,
+      value: id
+    }));
+
+    prompt([
+      {
+        
+      }
+    ])
+
+  })
+}
+
+function viewTotalUtilizedBudgetByDepartment(){
+  db.findAllEmployees()
+  .then(([rows]) => {
+    let employees = rows;
+    const employeeChoices = employees.map(({ id, first_name, last_name }) => ({
+      name: `${first_name} ${last_name}`,
+      value: id
+    }));
+
+    prompt([
+      {
+        
+      }
+    ])
+
+  })
+}
+
+function quit(){
+  db.findAllEmployees()
+  .then(([rows]) => {
+    let employees = rows;
+    const employeeChoices = employees.map(({ id, first_name, last_name }) => ({
+      name: `${first_name} ${last_name}`,
+      value: id
+    }));
+
+    prompt([
+      {
+        
+      }
+    ])
+
+  })
+}
+
 
  
 
