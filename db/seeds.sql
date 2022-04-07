@@ -20,7 +20,7 @@ VALUES (true, 1),
 
 INSERT INTO roles (title, salary, department_id)
 VALUES ("Lead Engineer", "140000", 1),
-VALUES ("Software Engineer", "95000", 5),
+       ("Software Engineer", "95000", 5),
        ("Account Manager", "120000", 3),
        ("Accountant", "75000", 4),
        ("HR Manager", "90000", 7),
@@ -32,10 +32,10 @@ INSERT INTO department (dpt_name)
 VALUES ("Engineering"),
        ("Engineering"),
        ("Finance"),
-       ("Finance");
-       ("HR");
-       ("HR");
-       ("Sales");
+       ("Finance"),
+       ("HR"),
+       ("HR"),
+       ("Sales"),
        ("Sales");
 
 

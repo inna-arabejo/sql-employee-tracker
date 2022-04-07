@@ -3,3 +3,8 @@ FROM employee x
 LEFT JOIN roles y
 ON x.manager_id = y.mgr
 WHERE y.mgr is null
+
+
+
+// queries
+// findAllEmployees
