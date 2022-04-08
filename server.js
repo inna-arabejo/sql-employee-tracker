@@ -5,124 +5,79 @@ const db = require("./db");
 
 initialize();
 
-function initialize(){
+const initialize = () => {
   const textlogo = logo({ name: "Employee Manager" }).render();
   console.log(textlogo);
   department();
 }
 
-function department(){
+const department = () => {
   prompt([
     {
       type: "list",
       name: "choice",
       message: "What would you like to do?",
       choices: [
-        {
-          name: "View All Employees",
-          value: "VIEW_EMPLOYEES"
-        },
-        {
-          name: "View All Employees By Department",
-          value: "VIEW_EMPLOYEES_BY_DEPARTMENT"
-        },
-        {
-          name: "View All Employees By Manager",
-          value: "VIEW_EMPLOYEES_BY_MANAGER"
-        },
-        {
-          name: "Add Employee",
-          value: "ADD_EMPLOYEE"
-        },
-        {
-          name: "Update Employee Manager",
-          value: "UPDATE_EMPLOYEE_MANAGER"
-        },
-        {
-          name: "Remove Employee",
-          value: "REMOVE_EMPLOYEE"
-        },
-        {
-          name: "Update Employee Role",
-          value: "UPDATE_EMPLOYEE_ROLE"
-        },
-        {
-          name: "Add Role",
-          value: "ADD_ROLE"
-        },
-        {
-          name: "View All Roles",
-          value: "VIEW_ROLES"
-        },
-        {
-          name: "Remove Role",
-          value: "REMOVE_ROLE"
-        },
-        {
-          name: "View All Departments",
-          value: "VIEW_DEPARTMENTS"
-        },
-        {
-          name: "Add Department",
-          value: "ADD_DEPARTMENT"
-        },
-        {
-          name: "Remove Department",
-          value: "REMOVE_DEPARTMENT"
-        },
-        {
-          name: "View Total Utilized Budget By Department",
-          value: "VIEW_TOTAL_UTILIZED_BUDGET_BY_DEPARTMENT"
-        },
-        {
-          name: "Quit",
-          value: "QUIT"
-        }
+        "View All Employees",
+        "View All Employees By Department",
+        "View All Employees By Manager",
+        "Add Employee",
+        "Update Employee Manager",
+        "Remove Employee",
+        "Update Employee Role",
+        "Add Role",
+        "View All Roles",
+        "Remove Role",
+        "View All Departments",
+        "Add Department",
+        "Remove Department",
+        "View Total Utilized Budget By Department",
+        "Quit",
       ]
     }
   ]).then(res => {
     let choice = res.choice;
     switch (choice){
-      case "VIEW_EMPLOYEES": 
+      case "View All Employees": 
         viewEmployees();
         break;
-      case "VIEW_EMPLOYEES_BY_DEPARTMENT":
+      case "View All Employees By Department":
         viewEmployeesByDepartment();
         break;
-      case "VIEW_EMPLOYEES_BY_MANAGER":
+      case "View All Employees By Manager":
         viewEmployeesByManager();
         break;
-      case "ADD_EMPLOYEE":
+      case "Add Employee":
         addEmployee();
         break;
-      case "UPDATE_EMPLOYEE_MANAGER":
+      case "Update Employee Manager":
         updateEmployeeManager();
         break;
-      case "REMOVE_EMPLOYEE":
+      case "Remove Employee":
         removeEmployee();
         break;
-      case "UPDATE_EMPLOYEE_ROLE":
+      case "Update Employee Role":
         updateEmployeeRole();
         break;
-      case "ADD_ROLE":
+      case "Add Role":
         addRole();
         break;
-      case "VIEW_ROLES":
+      case "View All Roles":
         viewRoles();
         break;
-      case "REMOVE_ROLE":
+      case "Remove Role":
         removeRole();
         break;
-      case "VIEW_DEPARTMENTS":
+      case "View All Departments":
         viewDepartments();
         break;
-      case "ADD_DEPARTMENT":
+      case "Add Department":
         addDepartment();
         break;
-      case "REMOVE_DEPARTMENT":
+      case "Remove Department":
         removeDepartment();
         break;
-      case "VIEW_TOTAL_UTILIZED_BUDGET_BY_DEPARTMENT":
+      case "View Total Utilized Budget By Department":
         viewTotalUtilizedBudgetByDepartment();
         break;
       default: 
@@ -132,7 +87,7 @@ function department(){
 }
 
 // View all employees
-function viewEmployees(){
+const viewEmployees = () => {
   db.findAllEmployees()
   .then(([rows]) => {
     let employees = rows;
