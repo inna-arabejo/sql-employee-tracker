@@ -50,8 +50,8 @@ const company = () => {
       case "View All Employees By Department":
         viewEmployeesByDepartment();
         break;
-      case "View All Employees By Manager":
-        viewEmployeesByManager();
+      case "View Total Utilized Budget By Department":
+        viewTotalUtilizedBudgetByDepartment();
         break;
       case "Add Department":
         addDepartment();
@@ -77,9 +77,6 @@ const company = () => {
       case "Update Employee Manager":
         updateEmployeeManager();
         break;
-      case "View Total Utilized Budget By Department":
-        viewTotalUtilizedBudgetByDepartment();
-        break;
       default:
         "Quit"; 
         quit();
@@ -93,7 +90,7 @@ const viewDepartments = () => {
               department.dpt_name AS 'department' FROM department`;
     connection.promise().query(sQueryL, (err, res) => {
       if(err) throw err;
-        console.log(res);
+        console.table(res);
       company();
   })
 }
@@ -102,13 +99,13 @@ const viewDepartments = () => {
 const viewRoles = () => {
   let sQueryL = `SELECT roles.id, 
               roles.title,   
-              department.dpt_name AS 'department', 
-              FROM roles, 
+              department.dpt_name AS 'department' 
+              FROM roles
               INNER JOIN department ON roles.department_id = department.id`;
     connection.promise().query(sQueryL, (err, res) => {
       if(err) throw err;
       res.forEach((roles) => {
-        console.log(role.title);
+        console.log(roles.title);
       });
       company();
   })
@@ -128,7 +125,7 @@ const viewEmployees = () => {
               ORDER BY employee.id`;
     connection.promise().query(sQueryL, (err, res) => {
       if(err) throw err;
-        console.log(res);
+        console.table(res);
       company();
   })
 }
@@ -137,13 +134,27 @@ const viewEmployees = () => {
 const viewEmployeesByDepartment = () => {
   let sQueryL = `SELECT employee.first_name, 
               employee.last_name, 
-              department.dpt_name AS 'department', 
+              department.dpt_name AS 'department' 
               FROM employee
               LEFT JOIN roles ON employee.role_id = roles.id
               LEFT JOIN department ON roles.department_id = department.id`;
     connection.query(sQueryL, (err, res) => {
       if(err) throw err;
-        console.log(res);
+        console.table(res);
+      company();
+  })
+}
+
+// View total utilized budget by department
+const viewTotalUtilizedBudgetByDepartment = () => {
+  let sQueryL = `SELECT department_id AS id, 
+              department.dpt_name AS 'department', 
+              SUM(salary) AS 'total utilized budget'
+              FROM roles
+              INNER JOIN department ON roles.department_id = department.id GROUP BY roles.department_id`;
+    connection.query(sQueryL, (err, res) => {
+      if(err) throw err;
+        console.table(res);
       company();
   })
 }
