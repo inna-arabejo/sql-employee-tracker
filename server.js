@@ -47,35 +47,35 @@ const company = () => {
       case "View All Employees": 
         viewEmployees();
         break;
-      case "Add Department":
-        addDepartment();
-        break;
-      case "Add Role":
-        addRole();
-        break;
-      case "Add Employee":
-        addEmployee();
-        break;
-      case "Update Employee Role":
-        updateEmployeeRole();
-        break;
       case "View All Employees By Department":
         viewEmployeesByDepartment();
         break;
       case "View All Employees By Manager":
         viewEmployeesByManager();
         break;
-      case "Update Employee Manager":
-        updateEmployeeManager();
+      case "Add Department":
+        addDepartment();
         break;
-      case "Remove Employee":
-        removeEmployee();
+      case "Remove Department":
+        removeDepartment();
+        break;
+      case "Add Role":
+        addRole();
         break;
       case "Remove Role":
         removeRole();
         break;
-      case "Remove Department":
-        removeDepartment();
+      case "Add Employee":
+        addEmployee();
+        break;
+      case "Remove Employee":
+        removeEmployee();
+        break;
+      case "Update Employee Role":
+        updateEmployeeRole();
+        break;
+      case "Update Employee Manager":
+        updateEmployeeManager();
         break;
       case "View Total Utilized Budget By Department":
         viewTotalUtilizedBudgetByDepartment();
@@ -128,6 +128,22 @@ const viewEmployees = () => {
               ORDER BY employee.id`;
     connection.promise().query(sQueryL, (err, res) => {
       if(err) throw err;
+        console.log(res);
+      company();
+  })
+}
+
+// View employees by department
+const viewEmployeesByDepartment = () => {
+  let sQueryL = `SELECT employee.first_name, 
+              employee.last_name, 
+              department.dpt_name AS 'department', 
+              FROM employee
+              LEFT JOIN roles ON employee.role_id = roles.id
+              LEFT JOIN department ON roles.department_id = department.id`;
+    connection.query(sQueryL, (err, res) => {
+      if(err) throw err;
+        console.log(res);
       company();
   })
 }
