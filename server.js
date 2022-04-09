@@ -114,6 +114,23 @@ const viewRoles = () => {
   })
 }
 
+// View all employees
+const viewEmployees = () => {
+  let sQueryL = `SELECT employee.id, 
+              employee.first_name, 
+              employee.last_name, 
+              roles.title, 
+              department.dpt_name AS 'department', 
+              roles.salary
+              FROM department, roles, employee
+              WHERE department.id = roles.department_id
+              AND roles.id = employee.role_id
+              ORDER BY employee.id`;
+    connection.promise().query(sQueryL, (err, res) => {
+      if(err) throw err;
+      company();
+  })
+}
 
 
 
