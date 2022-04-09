@@ -98,6 +98,22 @@ const viewDepartments = () => {
   })
 }
 
+// View all roles
+const viewRoles = () => {
+  let sQueryL = `SELECT roles.id, 
+              roles.title,   
+              department.dpt_name AS 'department', 
+              FROM roles, 
+              INNER JOIN department ON roles.department_id = department.id`;
+    connection.promise().query(sQueryL, (err, res) => {
+      if(err) throw err;
+      res.forEach((roles) => {
+        console.log(role.title);
+      });
+      company();
+  })
+}
+
 
 
 
