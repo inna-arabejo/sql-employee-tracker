@@ -1,22 +1,24 @@
-// Import and require mysql2
 const mysql = require('mysql2');
 
+// // Enable access to .env variables
+// require('dotenv').config();
 
-// Connect to database
+// Use environment variables to connect to database
 const connection = mysql.createConnection(
+  // process.env.DB_USER,
+  // process.env.DB_PASSWORD,
+  // process.env.DB_NAME,
+  
   {
     host: 'localhost',
-    // MySQL username,
     user: 'iarabejo3',
-    // TODO: Add MySQL password here
     password: 'iarabejo3!',
     database: 'company_db'
-  });
+  }
+);
 connection.connect(function (err){
   if (err) throw err;
 });
 
 module.exports = connection;
-
-
 
